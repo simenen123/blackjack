@@ -4,17 +4,15 @@ users_cards = []
 
 kort = [1,1,1,1, 2,2,2,2, 3,3,3,3, 4,4,4,4,]
 
-function start_game(){
-
-}
+let length =  kort.length;
 
 
-
-i = 0
-
-while (i < 2);{
-    random_card = math.floor(Math.random() * kort.lenght);
-    console.log(random_card)
-    let removed_item = kort.indexOf()
-    i++
-}
+let i = 0
+while (i < 2) {
+    random_card_index = Math.floor(Math.random() * length);
+    vårt_kort = kort[random_card_index]
+    console.log(vårt_kort)
+    users_cards.push(vårt_kort)
+    i++;
+  }
+  console.log(users_cards)
