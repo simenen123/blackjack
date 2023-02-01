@@ -3,11 +3,15 @@ window.onload
 
 let user_points = 0
 
+kort = [1,1,1,1, 2,2,2,2, 3,3,3,3, 4,4,4,4, 5,5,5,5, 6,6,6,6, 7,7,7,7, 8,8,8,8]
+
 users_cards = []
+
+users_cards_value = []
 
 dealer_cards = []
 
-kort = [1,1,1,1, 2,2,2,2, 3,3,3,3, 4,4,4,4, 5,5,5,5, 6,6,6,6, 7,7,7,7, 8,8,8,8]
+dealer_card_value = []
 
 types = ["C", "D", "H", "S"]
 
@@ -30,6 +34,7 @@ while (i < 2) {
   
     //fjerner fra dekket og legg til i hånd
     users_cards.push(vårt_kort + "-" + type )
+    users_cards_value.push(vårt_kort)
     kort.splice(random_card_index_player,1)
     i++;
     }
@@ -51,6 +56,7 @@ while (i < 2) {
     type = types[random_type_index]
 
     dealer_cards.push(dealer_card + "-" + type )
+    dealer_card_value.push(dealer_card)
     kort.splice(random_card_index_dealer,1)
     j++
   }
@@ -58,8 +64,10 @@ while (i < 2) {
 
 // Running the for loop
 for (let i = 0; i < users_cards.length; i++) {
-    user_points += users_cards[i];
+    user_points += users_cards_value[i];
+    console.log(user_points)
 }
+document.getElementById("your_points") = "Your points are" + user_points
 
 function startGame() {
   let cardImg = document.createElement("img");
